@@ -16,3 +16,11 @@
   padding-top: 5%;
   padding-bottom: 5%;
 }
+.clickable-row {
+  transition: background-color 1s;
+}
+
+.clickable-row:hover {
+  cursor: pointer;
+  background-color: #e4e4e4;
+}

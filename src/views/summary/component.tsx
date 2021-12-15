@@ -48,6 +48,7 @@ const Summary:FC = ()=> {
                         <TableRow
                         key={summary.id}
                         sx={{ '&:last-child td, &:last-child th': { border: 0 } }}
+                        className="clickable-row"
                         >
                         <TableCell component="th" scope="summary">
                             {"NAME: "+summary.client.name}
