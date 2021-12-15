@@ -1,0 +1,85 @@
+body {
+  display: flex;
+  flex: 1;
+  margin: 0;
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", "Roboto", "Oxygen",
+    "Ubuntu", "Cantarell", "Fira Sans", "Droid Sans", "Helvetica Neue",
+    sans-serif;
+  height: 100vh;
+}
+
+code {
+  font-family: source-code-pro, Menlo, Monaco, Consolas, "Courier New",
+    monospace;
+}
+
+:root {
+  --black-workshop: #121212;
+}
+
+.clickable:hover {
+  cursor: pointer;
+}
+
+#root {
+  display: flex;
+  flex-direction: column;
+  flex: 1;
+}
+.button-black {
+  border: 1 px solid;
+  border-color: Black;
+  background-color: transparent;
+  color: Black;
+  height: 5rem;
+  width: 100%;
+  font-size: 1.5rem;
+  text-transform: uppercase;
+  font-weight: 600;
+  transition: all 1s;
+  margin-bottom: 10%;
+}
+
+.button-black:hover {
+  cursor: pointer;
+  background-color: black;
+  color: white;
+}
+
+.button:hover {
+  cursor: pointer;
+  background-color: white;
+  color: black;
+}
+
+::placeholder {
+  color: black;
+}
+.clickable:hover {
+  cursor: pointer;
+}
+
+a:-webkit-any-link {
+  color: white;
+  text-decoration: none;
+}
+a {
+  color: black;
+  text-decoration: none;
+}
+
+*,
+::after,
+::before {
+  box-sizing: inherit;
+}
+p {
+  display: block;
+  margin-block-start: 0;
+  margin-block-end: 0;
+  margin-inline-start: 0;
+  margin-inline-end: 0;
+}
+ul {
+  padding-inline-start: 0;
+}

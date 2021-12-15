@@ -1,0 +1,54 @@
+.addbike-container {
+  display: grid;
+  flex: 1;
+  grid-template-columns: 1fr 1fr;
+  grid-template-rows: 100px 35vh 35vh 20vh;
+  grid-template-areas:
+    "header header"
+    "Initinfo Initinfo"
+    "Client Motorcycle"
+    "buttons buttons";
+  padding: 0 5vh;
+}
+.addbike-header {
+  grid-area: header;
+}
+.addbike-init {
+  grid-area: Initinfo;
+
+  display: flex;
+  flex-direction: column;
+  justify-content: space-evenly;
+}
+
+.addbike-client {
+  grid-area: Client;
+  margin: 0 10px 0 0;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-evenly;
+}
+
+.addbike-motorcycle {
+  grid-area: Motorcycle;
+  margin: 0 0 0 10px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-evenly;
+}
+
+.addbike-buttons {
+  grid-area: buttons;
+
+  display: flex;
+
+  justify-content: center;
+}
+
+.button-cancel {
+  margin: 0 10px 0 0;
+}
+
+.button-submit {
+  margin: 0 0 0 10px;
+}

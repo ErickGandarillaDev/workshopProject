@@ -1,0 +1,18 @@
+.summary-container {
+  display: grid;
+  flex: 1;
+  grid-template-columns: 1fr 1fr;
+  grid-template-rows: 100px 90vh;
+  grid-template-areas: "header header" "Table Table";
+
+  padding: 0 5vh;
+}
+
+.summary-header {
+  grid-area: header;
+}
+.summary-table {
+  grid-area: Table;
+  padding-top: 5%;
+  padding-bottom: 5%;
+}
