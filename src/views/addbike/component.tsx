@@ -38,7 +38,7 @@ const Addbike:FC = ()=> {
                 <p> Expected delivery date</p>
                 <Input
                 name="deliver_date"
-                placeholder="Expected Date (AAAA/MM/DD)"
+                placeholder="Expected Date (AAAA-MM-DD)"
                 onChange={formik.handleChange}
                 onBlur={formik.handleBlur} 
                 />
