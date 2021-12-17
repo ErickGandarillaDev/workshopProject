@@ -1,6 +1,7 @@
 import { Paper, Table, TableBody, TableCell, TableContainer, TableHead, TableRow } from '@mui/material';
 import { FC, useEffect, useState } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
+import { useNavigate } from 'react-router-dom';
 import { RepairSummary } from '../../models/bikes/types';
 import { popLoading, pushLoading } from '../../redux/ui/actions';
 import { userTokenSelector } from '../../redux/user/selectors';
@@ -12,6 +13,9 @@ const Summary:FC = ()=> {
     const [summarys,setSummarys]= useState<RepairSummary[]> ([]);
     const dispatch=useDispatch();
     const tokenUser = useSelector(userTokenSelector)
+
+    const navigate = useNavigate();
+
     useEffect(()=>{
              
      const getSummarys = async () =>{
@@ -44,12 +48,14 @@ const Summary:FC = ()=> {
                     </TableRow>
                     </TableHead>
                     <TableBody>
-                    {summarys.map((summary) => (
+                    {summarys.map((summary, index) => (
                         <TableRow
                         key={summary.id}
                         sx={{ '&:last-child td, &:last-child th': { border: 0 } }}
                         className="clickable-row"
+                        onClick={()=> navigate(`/summary/${index+1}`,{replace:true})}
                         >
+
                         <TableCell component="th" scope="summary">
                             {"NAME: "+summary.client.name}
                             <br/>

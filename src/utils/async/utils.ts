@@ -1,4 +1,4 @@
-import { ClientResponse, DateResponse, MotorcycleResponse, RepairSummary, RepairSummaryResponse } from '../../models/bikes/types';
+import { ClientResponse, DateResponse, Diagnosis, MotorcycleResponse, RepairSummary, RepairSummaryResponse, Status } from '../../models/bikes/types';
 import { TokenResponse, User } from '../../models/user/types';
 export const sleep = (time: number) =>
   new Promise<void>((resolve) => {
@@ -181,5 +181,73 @@ export const fetchSummary = async (
       return response;
     });
   return Summarys;
+}
+
+export const fetchDiagnosis = async (
+
+  token: Partial<User>
+): Promise<Diagnosis[]> => {
+  const Diagnosis = await fetch("http://104.237.129.63:8006/api/diagnosis/", {
+    method: "GET",
+    headers: new Headers({
+      'Content-Type': 'application/json',
+      'Authorization': `Bearer ${token.token}`
+    })
+  })
+    .then((res) => res.json())
+    .catch((error) => {
+      console.log(error);
+    })
+    .then((response) => {
+      return response;
+    });
+  return Diagnosis;
+
+}
+
+export const fetchStatus = async (
+
+  token: Partial<User>
+): Promise<Status[]> => {
+  const Status = await fetch("http://104.237.129.63:8006/api/status/", {
+    method: "GET",
+    headers: new Headers({
+      'Content-Type': 'application/json',
+      'Authorization': `Bearer ${token.token}`
+    })
+  })
+    .then((res) => res.json())
+    .catch((error) => {
+      console.log(error);
+    })
+    .then((response) => {
+      return response;
+    });
+  return Status;
+
+}
+export const patchSummary = async (
+  token: Partial<User>,
+  patch: string,
+  id: number,
+): Promise<RepairSummary> => {
+  console.log("llega a patch");
+  const RepairSummary = await fetch("http://104.237.129.63:8006/api/addrepairsummary/" + id + "/", {
+    method: "PATCH",
+    body: patch,
+    headers: new Headers({
+      'Accept': 'application/json',
+      'Content-Type': 'application/json',
+      'Authorization': `Bearer ${token.token}`
+    })
+  })
+    .then((res) => res.json())
+    .catch((error) => {
+      console.log(error);
+    })
+    .then((response) => {
+      return response;
+    });
+  return RepairSummary;
 }
 

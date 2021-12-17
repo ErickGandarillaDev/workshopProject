@@ -1,6 +1,6 @@
-import { addBikeResponse, RepairSummary } from '../../models/bikes/types';
+import { addBikeResponse, Diagnosis, RepairSummary, Status } from '../../models/bikes/types';
 import { User } from "../../models/user/types";
-import { addBike, fetchSummary } from '../../utils/async/utils';
+import { addBike, fetchDiagnosis, fetchStatus, fetchSummary } from '../../utils/async/utils';
 
 export const addbikeRequest = async (
     D: string,
@@ -20,3 +20,21 @@ export const summaryRequest = async (
 
     return response;
 };
+
+export const diagnosisRequest = async (
+    token: Partial<User>
+): Promise<Diagnosis[]> => {
+    const response = await fetchDiagnosis(token);
+
+    return response;
+};
+
+export const statusRequest = async (
+    token: Partial<User>
+): Promise<Status[]> => {
+    const response = await fetchStatus(token);
+
+    return response;
+};
+
+

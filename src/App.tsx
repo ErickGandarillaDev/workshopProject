@@ -10,6 +10,7 @@ import Error404 from './views/Error404/component';
 import Home from './views/home/component';
 import Login from './views/login/component';
 import Summary from './views/summary/component';
+import Summaryid from './views/summaryid/component';
 
 function App() {
 
@@ -31,6 +32,7 @@ function App() {
         <Routes>
           <Route path="/" element={<Home/>}  />
           <Route path="/summary" element={<Summary/>}  />
+          <Route path="/summary/:id" element={<Summaryid/>}/>
           <Route path="/addbike" element={<Addbike/>}  />
           <Route path="/login" element={<Login/>}  />
           <Route path="*" element={<Error404/>}  />

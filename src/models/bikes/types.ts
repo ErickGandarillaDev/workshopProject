@@ -74,3 +74,8 @@ export interface RepairSummary {
     motorcycle: Motorcycle;
     initialInfo: string;
 }
+
+export interface Status {
+    id: number;
+    description: string;
+}

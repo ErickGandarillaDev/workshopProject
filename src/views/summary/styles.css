@@ -3,7 +3,9 @@
   flex: 1;
   grid-template-columns: 1fr 1fr;
   grid-template-rows: 100px 90vh;
-  grid-template-areas: "header header" "Table Table";
+  grid-template-areas:
+    "header header"
+    "Table Table";
 
   padding: 0 5vh;
 }

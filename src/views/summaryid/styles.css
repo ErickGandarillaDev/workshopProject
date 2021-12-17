@@ -1,0 +1,67 @@
+.summaryid-container {
+  display: grid;
+  flex: 1;
+  grid-template-columns: 1fr 1fr;
+  grid-template-rows: 100px 15vh 15vh 15vh 15vh 15vh 15vh;
+  grid-template-areas:
+    "header header "
+    "client status"
+    "client status"
+    "client diagnosis"
+    "motorcycle diagnosis"
+    "motorcycle date"
+    "motorcycle date";
+  padding: 0 5vh;
+}
+
+.summaryid-header {
+  grid-area: header;
+}
+.summaryid-title {
+  text-align: center;
+  font-size: 2rem;
+  font-weight: 600;
+  color: black;
+  max-width: 950px;
+  margin-bottom: 2rem;
+}
+
+.summaryid-client {
+  grid-area: client;
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+  flex-direction: column;
+}
+
+.summaryid-motorcycle {
+  grid-area: motorcycle;
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+  flex-direction: column;
+}
+
+.summaryid-diagnosis {
+  grid-area: diagnosis;
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+  flex-direction: column;
+}
+
+.summaryid-status {
+  grid-area: status;
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+  flex-direction: column;
+}
+
+.summaryid-date {
+  grid-area: date;
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+  flex-direction: column;
+}
