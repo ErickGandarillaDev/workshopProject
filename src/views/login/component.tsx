@@ -1,6 +1,7 @@
 import { useFormik } from "formik";
 import { FC } from "react";
 import { useDispatch } from "react-redux";
+import { useNavigate } from "react-router-dom";
 import Input from "../../components/input/component";
 import { User } from "../../models/user/types";
 import { loginRequested, sigInRequested } from "../../redux/user/actions";
@@ -14,7 +15,7 @@ import { initialValues, onSubmit, validationSchema } from './form';
 const Login:FC =() => {
 
     const dispatch = useDispatch();
-
+    const navigate= useNavigate();
 
 
     const checkUser = (user:Partial<User>) =>{
@@ -84,7 +85,8 @@ const Login:FC =() => {
                 value={formik.values.password}
                 />
 
-                <button type="button" className="button-black" onClick={()=>formik.handleSubmit()}>
+                <button type="button" className="button-black" onClick={()=>formik.handleSubmit()
+                      }>
                     Enter
                 </button>
             </div>

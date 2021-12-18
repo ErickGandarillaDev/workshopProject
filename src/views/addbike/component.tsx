@@ -1,6 +1,7 @@
 import { useFormik } from "formik";
 import { FC } from "react";
 import { useSelector } from "react-redux";
+import { useNavigate } from "react-router-dom";
 import Input from "../../components/input/component";
 import { User } from "../../models/user/types";
 import { userTokenSelector } from "../../redux/user/selectors";
@@ -11,6 +12,8 @@ import "./styles.css";
 const Addbike:FC = ()=> {
 
     const tokenUser = useSelector(userTokenSelector);
+
+    const navigate= useNavigate();
     const tok:Partial<User> = {
         token: tokenUser
     }
@@ -79,13 +82,16 @@ const Addbike:FC = ()=> {
             </div>
 
             <div className="addbike-buttons">
-                <button type="button" className="button-red button-cancel">
+                <button type="button" 
+                className="button-red button-cancel"
+                onClick={()=>
+                    navigate("/",{replace:true})}>
                    Cancel
                 </button>
                 <button 
                 type="button" 
                 className="button-green button-submit"
-                onClick={()=>formik.handleSubmit()}
+                onClick={()=> formik.handleSubmit()}
                 >
                    Submit
                 </button>
