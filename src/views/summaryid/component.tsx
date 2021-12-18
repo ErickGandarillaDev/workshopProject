@@ -1,3 +1,8 @@
+import AccountCircleIcon from '@mui/icons-material/AccountCircle';
+import AddModeratorIcon from '@mui/icons-material/AddModerator';
+import CalendarTodayIcon from '@mui/icons-material/CalendarToday';
+import PendingIcon from '@mui/icons-material/Pending';
+import TwoWheelerIcon from '@mui/icons-material/TwoWheeler';
 import { FormControl, InputLabel, MenuItem, Select } from '@mui/material';
 import React, { FC, useEffect, useState } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
@@ -74,19 +79,19 @@ const Summaryid:FC= () => {
 
             </div>
             <div className="summaryid-client">
-                <p className="summaryid-title">Client</p>
-                <p>{`Name: ${summarys[lastItem-1].client.name}`}</p>
-                <p>{`Phone Number: ${summarys[lastItem-1].client.phoneNumber}`}</p> 
+                <p className="summaryid-title"><AccountCircleIcon/>Client</p>
+                <p className="summaryid-content">{`Name: ${summarys[lastItem-1].client.name}`}</p>
+                <p className="summaryid-content">{`Phone Number: ${summarys[lastItem-1].client.phoneNumber}`}</p> 
             </div>
             <div className="summaryid-motorcycle">
-                <p className="summaryid-title"> Motorcycle </p>
-                <p>{`Brand: ${summarys[lastItem-1].motorcycle.brand}`}</p>
-                <p>{`Line: ${summarys[lastItem-1].motorcycle.line}`}</p>
+                <p className="summaryid-title"><TwoWheelerIcon/> Motorcycle </p>
+                <p className="summaryid-content">{`Brand: ${summarys[lastItem-1].motorcycle.brand}`}</p>
+                <p className="summaryid-content">{`Line: ${summarys[lastItem-1].motorcycle.line}`}</p>
 
             </div>
             <div className="summaryid-diagnosis">
-                <p className="summaryid-title"> Diagnosis </p>
-                <p>{`Initial Information: ${summarys[lastItem-1].initialInfo}`}</p>
+                <p className="summaryid-title"><AddModeratorIcon/> Diagnosis </p>
+                <p className="summaryid-content">{`Initial Information: ${summarys[lastItem-1].initialInfo}`}</p>
                 <FormControl fullWidth>
                     <InputLabel id="demo-simple-select-label">Diagnosis</InputLabel>
                         <Select
@@ -107,7 +112,7 @@ const Summaryid:FC= () => {
 
             </div>
             <div className="summaryid-status">
-                <p className="summaryid-title"> Status </p>
+                <p className="summaryid-title"> <PendingIcon/>Status </p>
                 <FormControl fullWidth>
                     <InputLabel id="demo-simple-select-label">Status</InputLabel>
                         <Select
@@ -128,9 +133,9 @@ const Summaryid:FC= () => {
 
             </div>
             <div className="summaryid-date">
-                <p className="summaryid-title"> Date </p>
-                <p>{`Date of reception: ${summarys[lastItem-1].date.reception_date}`}</p>                
-                <p>{`Date of delivery: ${summarys[lastItem-1].date.deliver_date}`}</p>                
+                <p className="summaryid-title"><CalendarTodayIcon/> Date </p>
+                <p className="summaryid-content">{`Date of reception: ${summarys[lastItem-1].date.reception_date}`}</p>                
+                <p className="summaryid-content">  {`Date of delivery: ${summarys[lastItem-1].date.deliver_date}`}</p>                
             </div>
 
         </div>

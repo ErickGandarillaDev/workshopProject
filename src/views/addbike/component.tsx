@@ -79,12 +79,12 @@ const Addbike:FC = ()=> {
             </div>
 
             <div className="addbike-buttons">
-                <button type="button" className="button-black button-cancel">
+                <button type="button" className="button-red button-cancel">
                    Cancel
                 </button>
                 <button 
                 type="button" 
-                className="button-black button-submit"
+                className="button-green button-submit"
                 onClick={()=>formik.handleSubmit()}
                 >
                    Submit

@@ -45,6 +45,44 @@ code {
   background-color: black;
   color: white;
 }
+.button-red {
+  border: 1 px solid;
+  border-color: red;
+  background-color: transparent;
+  color: red;
+  height: 5rem;
+  width: 100%;
+  font-size: 1.5rem;
+  text-transform: uppercase;
+  font-weight: 600;
+  transition: all 1s;
+  margin-bottom: 10%;
+}
+
+.button-red:hover {
+  cursor: pointer;
+  background-color: red;
+  color: white;
+}
+.button-green {
+  border: 1 px solid;
+  border-color: green;
+  background-color: transparent;
+  color: green;
+  height: 5rem;
+  width: 100%;
+  font-size: 1.5rem;
+  text-transform: uppercase;
+  font-weight: 600;
+  transition: all 1s;
+  margin-bottom: 10%;
+}
+
+.button-green:hover {
+  cursor: pointer;
+  background-color: green;
+  color: white;
+}
 
 .button:hover {
   cursor: pointer;
